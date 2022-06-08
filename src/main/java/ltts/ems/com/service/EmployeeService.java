@@ -19,6 +19,10 @@ public interface EmployeeService {
 	 */
 	List<EmployeeDetails> getAllEmployees();
 
+	
+	
+	
+
 	/**
 	 * Method to implement pagination feature
 	 * @param pageNo Contains page number value

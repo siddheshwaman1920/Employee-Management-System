@@ -190,6 +190,24 @@ public class EmployeeController {
 	public String generateReport2(Model model) {
 		
 		List<EmployeeDetails> empDetails= employeeservice.getAllEmployees();
+		for (int i = 0; i < empDetails.size(); i++) 
+	     {      //Loop over java Array  outer Loop use
+	         for (int j = i + 1; j < empDetails.size(); j++) 
+	         {  // Loop over java array
+	             //int tmp = 0;                            //tempraory variable in order to compare.
+	        	 System.out.println("\n HERE");
+	             if (empDetails.get(i).getFirstName().compareTo(empDetails.get(j).getFirstName())>0) 
+	             {          //compare outer loop object with inner loop 
+	            	 EmployeeDetails tmp = empDetails.get(i);               // if greater than swapping.
+	            	 EmployeeDetails tmp2 = empDetails.get(j);   
+	       
+	            	 empDetails.add(i, tmp2);
+	            	 empDetails.remove(i+1);
+	            	 empDetails.add(j, tmp);
+	            	 empDetails.remove(j+1);
+	             }
+	         }
+	     }
 		model.addAttribute("empDetails",empDetails);
 		return "Admin-AttendanceReport";
 	
@@ -907,7 +925,6 @@ public class EmployeeController {
 		for(int k=0;k<departments.size();k++) {
 			System.out.println(departments.get(k).getLocation().toUpperCase()+"->"+Location.toUpperCase());
 			if (!(departments.get(k).getLocation().toUpperCase().equals(Location.toUpperCase()))) {
-				System.out.println("->Here");
 				departments.remove(k);
 				k-=1;
 			}
@@ -986,7 +1003,6 @@ public class EmployeeController {
 		for(int k=0;k<departments.size();k++) {
 			System.out.println(departments.get(k).getLocation().toUpperCase()+"->"+Location.toUpperCase());
 			if (!(departments.get(k).getLocation().toUpperCase().equals(Location.toUpperCase()))) {
-				System.out.println("->Here");
 				departments.remove(k);
 				k-=1;
 			}
@@ -1037,7 +1053,6 @@ public class EmployeeController {
 		for(int k=0;k<departments.size();k++) {
 			System.out.println(departments.get(k).getLocation().toUpperCase()+"->"+Location.toUpperCase());
 			if (!(departments.get(k).getLocation().toUpperCase().equals(Location.toUpperCase()))) {
-				System.out.println("->Here");
 				departments.remove(k);
 				k-=1;
 			}
@@ -1661,7 +1676,6 @@ public class EmployeeController {
 			System.out.println(Name.toUpperCase());
 			if((listEmployees.get(i).getFirstName()+listEmployees.get(i).getLastName()).toUpperCase().equals(Name.toUpperCase())) {
 				id = listEmployees.get(i).getEmpId();
-				System.out.println("Here");
 				break;
 			}
 		}
@@ -1774,7 +1788,6 @@ public class EmployeeController {
 			System.out.println(Name.toUpperCase());
 			if((listEmployees.get(i).getFirstName()+listEmployees.get(i).getLastName()).toUpperCase().equals(Name.toUpperCase())) {
 				id = listEmployees.get(i).getEmpId();
-				System.out.println("Here");
 				break;
 			}
 		}
@@ -1838,7 +1851,6 @@ public class EmployeeController {
 			System.out.println(Name.toUpperCase());
 			if((listEmployees.get(i).getFirstName()+listEmployees.get(i).getLastName()).toUpperCase().equals(Name.toUpperCase())) {
 				id = listEmployees.get(i).getEmpId();
-				System.out.println("Here");
 				break;
 			}
 		}
