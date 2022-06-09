@@ -417,7 +417,7 @@
 			<br>
 
 			<div class="row">
-				<button type="submit" class="button text-center">SAVE EMPLOYEE</button>
+				<button type="submit" class="button text-center" onclick="popup()">SAVE EMPLOYEE</button>
 			</div>
 			<br><br>
 		</form>
@@ -449,6 +449,10 @@
 				};
 				reader.readAsDataURL(file);
 			}
+			
+			function popup() {
+			alert("New record added successfully !");
+		}
 
 		</script>
 

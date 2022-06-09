@@ -256,7 +256,7 @@
 
 </head>
 
-<body background="https://www.softwaresuggest.com/blog/wp-content/uploads/2019/12/8-Surefire-Steps-to-Handle-Employee-Attendance-Issues.png" onload="removeduplicate(),optionFirst()">
+<body background="https://www.softwaresuggest.com/blog/wp-content/uploads/2019/12/8-Surefire-Steps-to-Handle-Employee-Attendance-Issues.png" onload="removeduplicate(),optionFirst(),update()">
 	<div class="topnav">
 
 		<a class="active" th:href="@{/Admin/AdminDashboard}">HOME</a>
@@ -325,7 +325,7 @@ function changeContent2() {
 					<label class="text-mute pr-3" for="employee-name" >
 				<b>SELECT FILE TYPE</b>
 			</label>
-					<select class="select" name="departments" id="reportty" >
+					<select class="select" name="departments" id="reportty" onChange="updatehere()">
 		
 		<option value="DOCX">DOCX</option>
 	        <option value="PDF" selected>PDF</option>
@@ -335,7 +335,7 @@ function changeContent2() {
 					<input type="text" id="value3" hidden>
 					
 					<script type="text/javascript">
-						function updatenew() {
+						function updatehere() {
 							var select = document.getElementById('reportty');
 							var option = select.options[select.selectedIndex];
 
@@ -344,11 +344,11 @@ function changeContent2() {
 							
 						}
 
-						update();
+						updatehere();
 					</script>
 	    			
     	<br><br>
-	    	<input type="button" class="btn" name="generate" id="generate" value="GENERATE" onclick=popupAll()>
+   	<input type="button" class="btn" name="generate" id="generate" value="GENERATE" onclick="location.href='/Admin/AdminDashboard/'+ document.getElementById('value3').value;">
 
 	    	</div>
 	    	
@@ -361,7 +361,7 @@ function changeContent2() {
 			</label>
 		
 		
-		<select class="select" name="departments" id="language" onload="updatevalue()" >
+		<select class="select" name="departments" id="language" onChange="updatenew()" >
 		<option th:each="departments :${departments}" th:text="${departments.location}"></select >
 					
 					<input type="text" id="value" hidden>
@@ -370,7 +370,7 @@ function changeContent2() {
 					
 					
 					<script type="text/javascript">
-						function updatevalue() {
+						function updatenew() {
 							var select = document.getElementById('language');
 							var option = select.options[select.selectedIndex];
 
@@ -382,16 +382,15 @@ function changeContent2() {
 						
 						function popupAll() {
 							alert("File saved on your desktop in the employee management system folder");
-							location.href='/Admin/AdminDashboard/'+ document.getElementById('value3').value;
 						}
 
-						update();
+						updatenew();
 					</script>
 					
 					<label class="text-mute pr-3" for="employee-name" >
 				<b>SELECT FILE TYPE</b>
 			</label>
-					<select class="select" name="departments" id="reporttype" onload="update()" >
+					<select class="select" name="departments" id="reporttype" onChange="update()" >
 		
 		<option value="DOCX">DOCX</option>
 	        <option value="PDF" selected>PDF</option>
@@ -434,8 +433,7 @@ function changeContent2() {
 }
 </script>
     	<br><br>
-    	<input type="button" class="btn" name="generate" id="generate" value="GENERATE" onclick=popupSpecific()>
-
+   	<input type="button" class="btn" name="generate" id="generate" value="GENERATE" onclick="location.href='/Admin/AdminDashboard/'+ document.getElementById('value2').value +'/'+ document.getElementById('value').value;">
 <!--<a class="btn" onclick = "this.href='/Admin/AdminDashboard/DOCX'">DOCX</a>
 
 <a class="btn" onclick = "this.href='/Admin/AdminDashboard/PDF/' ">PDF</a>
@@ -465,7 +463,6 @@ function changeContent2() {
 		
 		function popupSpecific() {
 			alert("File saved on your desktop in the employee management system folder");
-			location.href='/Admin/AdminDashboard/'+ document.getElementById('value2').value +'/'+ document.getElementById('value').value;
 		}
 	</script>
 </body>

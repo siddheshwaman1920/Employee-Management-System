@@ -256,7 +256,7 @@
 
 </head>
 
-<body background="https://www.softwaresuggest.com/blog/wp-content/uploads/2019/12/8-Surefire-Steps-to-Handle-Employee-Attendance-Issues.png" onload="removeduplicate(),optionFirst()">
+<body background="https://www.softwaresuggest.com/blog/wp-content/uploads/2019/12/8-Surefire-Steps-to-Handle-Employee-Attendance-Issues.png" onload="removeduplicate(),optionFirst(),update()">
 	<div class="topnav">
 
 		<a class="active" th:href="@{/Admin/AdminDashboard}">HOME</a>
@@ -320,19 +320,19 @@ function changeContent2() {
 				<div class="reportone hide" id="locationname" >
 			
 					
-					<label class="text-mute pr-3" for="employee-name" >
+					<label class="text-mute pr-3" for="employee-name"  >
 				<b>SELECT FILE TYPE</b>
 			</label>
-					<select class="select" name="listEmployees" id="reportty" >
+					<select class="select" name="listEmployees" id="reportty" onChange="updatehere()">
 		<option value="DOCX">DOCX</option>
-	        <option value="PDF" selected>PDF</option>
+	        <option value="PDF"selected>PDF</option>
 	        <option value="XLSX">XLSX</option>
 		</select >
 					
-					<input type="text" id="value3" hidden>
+					<input type="text" id="value3" hidden >
 					
 					<script type="text/javascript">
-						function updatenew() {
+						function updatehere() {
 							var select = document.getElementById('reportty');
 							var option = select.options[select.selectedIndex];
 
@@ -342,11 +342,11 @@ function changeContent2() {
 						}
 						
 
-						update();
+						updatehere();
 					</script>
 	    			
     	<br><br>
-	    	<input type="button" class="btn" name="generate" id="generate" value="GENERATE" onclick="popup()">
+	    	<input type="button" class="btn" name="generate" id="generate" value="GENERATE" onclick="location.href='/Admin/ViewAttendanceRequests/'+ document.getElementById('value3').value;">
 
 	    	</div>
 	    	
@@ -367,16 +367,16 @@ function changeContent2() {
 			</label>
 		
 		
-		<select class="select" name="empDetails" id="language" onload="updatevalue()" >
+		<select class="select" name="empDetails" id="language" onChange="updatenew()">
 		
 		<option th:each="empDetails:${empDetails}" th:text="${empDetails.firstName+empDetails.lastName}">
 		</select >
 		<br>
-		<input type="text" id="value" hidden>
+		<input type="text" id="value" hidden >
 			<br>		
 					
 					<script type="text/javascript">
-						function updatevalue() {
+						function updatenew() {
 							var select = document.getElementById('language');
 							var option = select.options[select.selectedIndex];
 
@@ -384,12 +384,9 @@ function changeContent2() {
 							document.getElementById('text').value = option.text;
 							
 						}
-						function popup() {
-							alert("File saved on your desktop in the employee management system folder");
-							location.href='/Admin/ViewAttendanceRequests/'+ document.getElementById('value3').value;
-						}
+						
 
-						update();
+						updatenew();
 					</script>
 					
 					<label class="text-mute pr-3" for="employee-name" >
@@ -432,7 +429,7 @@ function changeContent2() {
 }
 </script>
     	<br><br>
-    	<input type="button" class="btn" name="generate" id="generate" value="GENERATE" onclick="popup()">
+    	<input type="button" class="btn" name="generate" id="generate" value="GENERATE" onclick="location.href='/Admin/ViewAttendanceRequests/'+ document.getElementById('value2').value +'/'+ document.getElementById('value').value;">
 
 <!--a class="btn" onclick = "this.href='/Admin/AdminDashboard/DOCX'">DOCX</a>
 
@@ -461,10 +458,6 @@ function changeContent2() {
 			alert("Sent for regularisation.");
 		}
 		
-		function popup() {
-			alert("File saved on your desktop in the employee management system folder");
-			location.href='/Admin/ViewAttendanceRequests/'+ document.getElementById('value2').value +'/'+ document.getElementById('value').value;
-		}
 	</script>
 </body>
 
