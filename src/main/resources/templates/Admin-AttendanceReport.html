@@ -346,7 +346,7 @@ function changeContent2() {
 					</script>
 	    			
     	<br><br>
-	    	<input type="button" class="btn" name="generate" id="generate" value="GENERATE" onclick="location.href='/Admin/ViewAttendanceRequests/'+ document.getElementById('value3').value;">
+	    	<input type="button" class="btn" name="generate" id="generate" value="GENERATE" onclick="location.href='/Admin/ViewAttendanceRequests/'+ document.getElementById('value3').value;showMessage();">
 
 	    	</div>
 	    	
@@ -428,8 +428,15 @@ function changeContent2() {
 
 }
 </script>
+
+<script type="text/javascript">
+            function showMessage() {
+                alert("File saved successfully at EmployeeManagementFolder on Desktop !");
+            }
+        </script>
+
     	<br><br>
-    	<input type="button" class="btn" name="generate" id="generate" value="GENERATE" onclick="location.href='/Admin/ViewAttendanceRequests/'+ document.getElementById('value2').value +'/'+ document.getElementById('value').value;">
+    	<input type="button" class="btn" name="generate" id="generate" value="GENERATE" onclick="location.href='/Admin/ViewAttendanceRequests/'+ document.getElementById('value2').value +'/'+ document.getElementById('value').value;showMessage();">
 
 <!--a class="btn" onclick = "this.href='/Admin/AdminDashboard/DOCX'">DOCX</a>
 

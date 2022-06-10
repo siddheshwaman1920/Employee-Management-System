@@ -348,7 +348,7 @@ function changeContent2() {
 					</script>
 	    			
     	<br><br>
-   	<input type="button" class="btn" name="generate" id="generate" value="GENERATE" onclick="location.href='/Admin/AdminDashboard/'+ document.getElementById('value3').value;">
+   	<input type="button" class="btn" name="generate" id="generate" value="GENERATE" onclick="location.href='/Admin/AdminDashboard/'+ document.getElementById('value3').value;showMessage();">
 
 	    	</div>
 	    	
@@ -380,9 +380,7 @@ function changeContent2() {
 							
 						}
 						
-						function popupAll() {
-							alert("File saved on your desktop in the employee management system folder");
-						}
+						
 
 						updatenew();
 					</script>
@@ -433,7 +431,12 @@ function changeContent2() {
 }
 </script>
     	<br><br>
-   	<input type="button" class="btn" name="generate" id="generate" value="GENERATE" onclick="location.href='/Admin/AdminDashboard/'+ document.getElementById('value2').value +'/'+ document.getElementById('value').value;">
+   	<input type="button" class="btn" name="generate" id="generate" value="GENERATE" onclick="location.href='/Admin/AdminDashboard/'+ document.getElementById('value2').value +'/'+ document.getElementById('value').value;showMessage();" >
+<script type="text/javascript">
+            function showMessage() {
+                alert("File saved successfully at EmployeeManagementFolder on Desktop !");
+            }
+        </script>
 <!--<a class="btn" onclick = "this.href='/Admin/AdminDashboard/DOCX'">DOCX</a>
 
 <a class="btn" onclick = "this.href='/Admin/AdminDashboard/PDF/' ">PDF</a>
@@ -456,15 +459,7 @@ function changeContent2() {
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 		crossorigin="anonymous"></script>
-	<script>
-		function myFun() {
-			alert("Sent for regularisation.");
-		}
-		
-		function popupSpecific() {
-			alert("File saved on your desktop in the employee management system folder");
-		}
-	</script>
+	
 </body>
 
     <script>
