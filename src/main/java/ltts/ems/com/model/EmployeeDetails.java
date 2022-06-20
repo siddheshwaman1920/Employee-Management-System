@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SecondaryTable;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -14,10 +16,11 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name="EmployeeDetailsTable")
+
 public class EmployeeDetails {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int empId;
 	private String firstName;
 	private String lastName;

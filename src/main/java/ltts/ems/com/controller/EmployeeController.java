@@ -133,7 +133,6 @@ public class EmployeeController {
 
 		// shows employee repository
 		model.addAttribute("listEmployees", employeeservice.getAllEmployees());
-		System.out.print(employeeservice.getAllEmployees());
 		return findPaginated(1, model);
 	}
 	
@@ -195,7 +194,7 @@ public class EmployeeController {
 	         for (int j = i + 1; j < empDetails.size(); j++) 
 	         {  // Loop over java array
 	             //int tmp = 0;                            //tempraory variable in order to compare.
-	        	 System.out.println("\n HERE");
+	        	 System.out.println("");
 	             if (empDetails.get(i).getFirstName().compareTo(empDetails.get(j).getFirstName())>0) 
 	             {          //compare outer loop object with inner loop 
 	            	 EmployeeDetails tmp = empDetails.get(i);               // if greater than swapping.
@@ -239,7 +238,6 @@ public class EmployeeController {
 
 		// Generate employee List
 		model.addAttribute("listEmployees", employeeservice.getAllEmployees());
-		System.out.print(employeeservice.getAllEmployees());
 		List<EmployeeDetails> listEmployees = employeeservice.getAllEmployees();
 		
 		
@@ -379,7 +377,6 @@ public class EmployeeController {
 
 		// shows employee repository
 		model.addAttribute("listEmployees", employeeservice.getAllEmployees());
-		System.out.print(employeeservice.getAllEmployees());
 		
 		
 		//trial
@@ -439,7 +436,6 @@ public class EmployeeController {
 	public String xlsxGenEmployeeList(Model model,@PathVariable(value = "Location") String Location) throws IOException{
 		// shows employee repository
 		model.addAttribute("listEmployees", employeeservice.getAllEmployees());
-		System.out.print(employeeservice.getAllEmployees());
 				
 				
 		//trial
@@ -507,7 +503,6 @@ public class EmployeeController {
 
 		// shows employee repository
 		model.addAttribute("listEmployees", employeeservice.getAllEmployees());
-		System.out.print(employeeservice.getAllEmployees());
 		
 		
 		//trial
@@ -639,7 +634,6 @@ public class EmployeeController {
 
 		// shows employee repository
 		model.addAttribute("listEmployees", employeeservice.getAllEmployees());
-		System.out.print(employeeservice.getAllEmployees());
 		
 		
 		//trial
@@ -696,7 +690,6 @@ public class EmployeeController {
 	public String xlsxGenEmployeeList(Model model) throws IOException{
 		// shows employee repository
 		model.addAttribute("listEmployees", employeeservice.getAllEmployees());
-		System.out.print(employeeservice.getAllEmployees());
 				
 				
 		//trial
@@ -1671,7 +1664,7 @@ public class EmployeeController {
 		List<EmployeeDetails> listEmployees = employeeservice.getAllEmployees();
 		int id=0;
 		for(int i = 0;i<listEmployees.size();i++) {
-			System.out.println("This");
+			System.out.println("");
 			System.out.println(listEmployees.get(i).getFirstName()+listEmployees.get(i).getLastName());
 			System.out.println(Name.toUpperCase());
 			if((listEmployees.get(i).getFirstName()+listEmployees.get(i).getLastName()).toUpperCase().equals(Name.toUpperCase())) {
@@ -1783,7 +1776,7 @@ public class EmployeeController {
 		List<EmployeeDetails> listEmployees = employeeservice.getAllEmployees();
 		int id=0;
 		for(int i = 0;i<listEmployees.size();i++) {
-			System.out.println("This");
+			System.out.println("");
 			System.out.println(listEmployees.get(i).getFirstName()+listEmployees.get(i).getLastName());
 			System.out.println(Name.toUpperCase());
 			if((listEmployees.get(i).getFirstName()+listEmployees.get(i).getLastName()).toUpperCase().equals(Name.toUpperCase())) {
@@ -1846,7 +1839,7 @@ public class EmployeeController {
 		List<EmployeeDetails> listEmployees = employeeservice.getAllEmployees();
 		int id=0;
 		for(int i = 0;i<listEmployees.size();i++) {
-			System.out.println("This");
+			System.out.println("");
 			System.out.println(listEmployees.get(i).getFirstName()+listEmployees.get(i).getLastName());
 			System.out.println(Name.toUpperCase());
 			if((listEmployees.get(i).getFirstName()+listEmployees.get(i).getLastName()).toUpperCase().equals(Name.toUpperCase())) {
@@ -1920,7 +1913,6 @@ public class EmployeeController {
 	@GetMapping("/Admin/ViewAttendanceRequests")
 	public String attendance(Model model) {
 		model.addAttribute("listAttendance", attendance_service.getAllAttendance());
-		System.out.print(attendance_service.getAllAttendance());
 		System.out.println("ADMIN SIDE ATTENDANCE PAGE");
 		return "AdminViewAllAttendanceRequests";
 	}
